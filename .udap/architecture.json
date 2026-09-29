@@ -1,0 +1,49 @@
+{
+  "edges": [],
+  "groups": [
+    {
+      "id": "tic_tac_toe_dev",
+      "kind": "environment",
+      "name": "tic-tac-toe-dev",
+      "ref": {
+        "id": "env_01a0ed4e3b3a73d7afa34bc079e3dc94",
+        "kind": "environment"
+      }
+    }
+  ],
+  "nodes": [
+    {
+      "group": "tic_tac_toe_dev",
+      "id": "tic_tac_toe_ec2",
+      "name": "tic-tac-toe",
+      "props": {
+        "instance_type": "t3.micro",
+        "region": "us-east-1"
+      },
+      "type": "service.ec2"
+    },
+    {
+      "group": "tic_tac_toe_dev",
+      "id": "tic_tac_toe_sg",
+      "name": "Security Group (22, 3000)",
+      "props": {
+        "name": "tic-tac-toe-sg",
+        "notes": "inbound 22/tcp and 3000/tcp from 0.0.0.0/0; all outbound",
+        "region": "us-east-1"
+      },
+      "type": "resource.firewall"
+    },
+    {
+      "group": null,
+      "id": "browser_user",
+      "name": "Browser (Player)",
+      "props": {},
+      "type": "external.user"
+    }
+  ],
+  "scope": {
+    "id": null,
+    "kind": "estate"
+  },
+  "version": 1
+}
